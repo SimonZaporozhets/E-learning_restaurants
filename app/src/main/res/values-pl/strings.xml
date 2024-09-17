@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">E-learning_restaurants</string>
+    <string name="passwordText">Hasło</string>
+    <string name="buttonLogin">Zaloguj się</string>
+    <string name="buttonRegister">Zarejestruj się</string>
+    <string name="buttonSubmit">Zatwierdz</string>
+    <string name="buttonAddRestaurant">Dodaj restauracje</string>
+    <string name="errorTitle">Błąd!</string>
+    <string name="errorEmptyFields">Pola nie powinny być puste!</string>
+    <string name="errorLoginIncorrect">Nieprawidłowa nazwa użytkownika lub hasło</string>
+    <string name="errorAccountExist">Konto o podanym loginie juz istnieje</string>
+    <string name="infoRegisterSuccessful">Konto zostalo zarejestrowane i mozesz sie zalogowac.</string>
+    <string name="title_activity_main2">s</string>
+    <string name="inputRestaurantName">Nazwa restauracji</string>
+    <string name="inputRestaurantPhone">Numer telefonu</string>
+    <string name="buttonGps">Pobierz pozycje GPS</string>
+</resources>
