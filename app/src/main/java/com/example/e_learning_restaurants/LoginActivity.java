@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        progressBar = findViewById(R.id.progressBar);
         final EditText et_Login = findViewById(R.id.et_Login);
         final EditText et_Password = findViewById(R.id.et_Password);
         Button btn_Login = findViewById(R.id.btn_Login);
@@ -71,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                     dialog.show();
                 } else {
                     String url = "http://dev.imagit.pl/mobilne/api/login/"+login+"/"+password;
+                    progressBar.setVisibility(View.VISIBLE);
                     client.get(url, new AsyncHttpResponseHandler() {
                         @Override
                         public void onSuccess(int i, Header[] headers, byte[] bytes) {
@@ -85,11 +90,12 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(LoginActivity.this, R.string.errorLoginIncorrect, Toast.LENGTH_LONG).show();
                             }
+                            progressBar.setVisibility(View.GONE);
                         }
 
                         @Override
                         public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-
+                            progressBar.setVisibility(View.GONE);
                         }
                     });
                 }
